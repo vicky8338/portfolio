@@ -44,22 +44,22 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Popup message on contact form submission
+// Custom popup message on contact form submission
 const form = document.getElementById('contactForm');
 if (form) {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         this.reset();
 
+        // Create popup
         const alertBox = document.createElement('div');
         alertBox.className = 'alert-popup';
         alertBox.innerText = 'Thank you! Your message has been sent.';
         document.body.appendChild(alertBox);
-        alertBox.style.display = 'block';
 
+        // Show and auto-remove
         setTimeout(() => {
             alertBox.remove();
         }, 3000);
     });
-
 }
